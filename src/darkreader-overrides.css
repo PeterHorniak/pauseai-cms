@@ -1,0 +1,44 @@
+html[data-darkreader-scheme="dark"] {
+  /* unintended separation */
+  min-height: 100vh;
+  body {
+    min-height: 100vh;
+  }
+
+  * {
+    --text-contrast: hsl(0, 0%, 10%);
+  }
+
+  /* visual hierarchy */
+  [class*="HeaderQuickNewButton"],
+  [class*="CollectionTopNewButton"],
+  [class*="LibraryTop"] [class*="button-gray"] {
+    background-color: hsl(0, 0%, 90%);
+    color: var(--text-contrast);
+    &:hover {
+      background-color: hsl(0, 0%, 70%);
+      color: var(--text-contrast);
+    }
+  }
+
+  /* visual hierarchy */
+  [class*="WorkflowTopRow"] [role="button"] {
+    background-color: hsl(0, 0%, 80%);
+    color: var(--text-contrast);
+  }
+
+  /* visual clue */
+  [class*="sidebarNavLinkActive"] {
+    background-color: rgba(58, 105, 199, 0.1); /* accent color with alpha */
+  }
+
+  /* readability */
+  [class*="WorkflowListContainer"] [name="draft"] {
+    color: hsl(273, 48%, 80%); /* lightened */
+  }
+
+  /* visual clue */
+  [class*="textBadgeSuccess"] {
+    color: #2ecc71; /* flatuicolors.com/palette/defo */
+  }
+}
