@@ -1,9 +1,9 @@
 :root {
-  --logo-url: url("logo-light.svg");
+  --logo-url: url("/logo-light.svg");
 }
 
 html[data-darkreader-scheme="dark"] {
-  --logo-url: url("logo-dark.svg");
+  --logo-url: url("/logo-dark.svg");
 }
 
 [class*="AppHeaderNavList"] li:first-child a::before {
