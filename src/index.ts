@@ -1,5 +1,6 @@
 import * as DarkReader from "darkreader";
 import CMS from "decap-cms-app";
+import './add-logo.css';
 import darkreaderOverrides from "./darkreader-overrides.css?inline";
 import { registerPlugin as registerDecapPrettier } from "./decap-prettier";
 import { registerPlugin as registerDecapSlug } from "./decap-slug";
