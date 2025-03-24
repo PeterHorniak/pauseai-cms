@@ -6,6 +6,8 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
 
 - Based on [Decap CMS](https://decapcms.org/)
 - Uses [Vite](https://vitejs.dev/) for development and building
+- **Logo Plugin**
+    - Adds a custom logo to the navigation bar.
 - **Prettier Plugin**: 
     - Integrates [Prettier](https://prettier.io/) for code formatting within the CMS editor.
     - Automatically formats markdown content in the body field before saving entries, ensuring consistent content formatting.

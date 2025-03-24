@@ -1,16 +1,22 @@
 import * as DarkReader from "darkreader";
 import CMS from "decap-cms-app";
-import './add-logo.css';
 import darkreaderOverrides from "./darkreader-overrides.css?inline";
+import { registerPlugin as registerDecapLogo } from "./decap-logo/index";
 import { registerPlugin as registerDecapPrettier } from "./decap-prettier";
 import { registerPlugin as registerDecapSlug } from "./decap-slug";
 
-const DEBUG = true
+const DEBUG = false;
 
-if (DEBUG) addEventListener('message', event => console.log('message', event.data))
+if (DEBUG)
+  addEventListener("message", (event) => console.log("message", event.data));
 
 registerDecapPrettier(CMS, {});
 registerDecapSlug();
+registerDecapLogo({
+  width: "140px",
+  supportDarkMode: true,
+  darkSelector: "html[data-darkreader-scheme]",
+});
 CMS.init();
 DarkReader.auto(
   {
