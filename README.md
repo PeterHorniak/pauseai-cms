@@ -1,5 +1,7 @@
 # PauseAI CMS
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d24700b8-9bf5-47e2-a140-46d257dc2250/deploy-status)](https://app.netlify.com/projects/pauseai-cms/deploys)
+
 This project is a Decap CMS configuration, enhanced with several plugins, for the PauseAI website.
 
 ## Features
