@@ -43,6 +43,7 @@ collections:
       - name: "body"
         widget: "markdown"
   - label: "Communities"
+    description: "Shown on pauseai.info/communities"
     name: "communities"
     files:
       - label: "PauseAI communities"
