@@ -28,8 +28,14 @@ html[data-darkreader-scheme="dark"] {
   }
 
   /* visual clue */
-  [class*="sidebarNavLinkActive"] {
+  .sidebar-active,
+  [class*="SidebarNavLink"]:hover {
     background-color: rgba(58, 105, 199, 0.1); /* accent color with alpha */
+  }
+
+  /* visual clue */
+  [class*="SidebarNavLink"]:not(.sidebar-active):not(:hover) {
+    border-color: transparent;
   }
 
   /* readability */
