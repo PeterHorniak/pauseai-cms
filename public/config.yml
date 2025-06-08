@@ -42,3 +42,35 @@ collections:
         required: false
       - name: "body"
         widget: "markdown"
+  - label: "Communities"
+    name: "communities"
+    files:
+      - label: "PauseAI communities"
+        name: "pauseai"
+        file: "src/routes/communities/pauseai-communities.json"
+        fields:
+          - label: Communities
+            name: communities
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Latitude, name: lat, widget: number }
+              - { label: Longitutde, name: lon, widget: number }
+              - {
+                  label: Link,
+                  name: link,
+                  widget: string,
+                  hint: "**Available placeholders:** $$DISCORD_GLOBAL$$, $$DISCORD_US$$, $$DISCORD_GERMANY$$, $$DISCORD_FRANCE$$, $$WHATSAPP_ITALY$$",
+                }
+      - label: "Adjacent communities"
+        name: "adjacent"
+        file: "src/routes/communities/adjacent-communities.json"
+        fields:
+          - label: Communities
+            name: communities
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Latitude, name: lat, widget: number }
+              - { label: Longitutde, name: lon, widget: number }
+              - { label: Link, name: link, widget: string }
