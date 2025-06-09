@@ -31,8 +31,8 @@ export function registerPlugin(cms: typeof CMS) {
       return parsed;
     },
     toFile: (data) => {
-      const entries = (data as any).entries;
-      const dict = entryObjectsToDict(entries);
+      const entryObjects = (data as any).entries;
+      const dict = entryObjectsToDict(entryObjects);
       return JSON.stringify(dict);
     },
   });
