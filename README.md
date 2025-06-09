@@ -53,6 +53,15 @@ The `communities` collection manages community data, displayed on [pauseai.info/
         - `lon`: Longitude (Number)
         - `link`: Link to the community (String)
 
+### Messages
+
+The `messages` collection manages localized message strings. It uses the `json_dict` format.
+
+- **English Messages** (`messages/en.json`)
+    - `entries`: A list of key-value pairs, which is a temporary representation produced by the JSON Dictionary Plugin. The underlying JSON file is a dictionary. Each item in the list has:
+        - `key`: The unique identifier for the message (String)
+        - `value`: The message string (String)
+
 ## Backend
 
 - **Backend**: GitHub
