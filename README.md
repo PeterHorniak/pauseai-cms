@@ -25,7 +25,7 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
 The CMS is configured for managing "posts" with the following fields:
 
 - `title`: Title of the post (String)
-- `slug`: Slug for the post URL (String, optional, but required for new posts due to Slug Plugin behavior)
+- `slug`: Slug for the post URL (String, optional, but in practice required for new posts)
 - `description`: Short description of the post (String, optional)
 - `image`: Featured image for the post (Image, optional)
 - `author`: Author of the post (String, optional)
