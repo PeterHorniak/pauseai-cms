@@ -75,3 +75,17 @@ collections:
               - { label: Latitude, name: lat, widget: number }
               - { label: Longitutde, name: lon, widget: number }
               - { label: Link, name: link, widget: string }
+  - name: "messages"
+    label: "Messages"
+    format: "json_dict"
+    files:
+      - label: "English Messages"
+        name: "en"
+        file: "messages/en.json"
+        fields:
+          - name: "entries"
+            label: "Messages"
+            widget: "list"
+            fields:
+              - { name: "key", label: "Key", widget: "string" }
+              - { name: "value", label: "Value", widget: "string" }
