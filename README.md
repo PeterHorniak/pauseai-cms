@@ -75,6 +75,7 @@ The `messages` collection manages localized message strings. It uses the `json_d
 - prettier: Code formatter
 - react and react-dom: React libraries (Decap CMS dependency)
 - vite: Build tool
+- vitest: For unit testing
 
 ## Development
 
