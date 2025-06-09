@@ -20,15 +20,35 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
 
 ## Collections
 
+### Posts
+
 The CMS is configured for managing "posts" with the following fields:
 
 - `title`: Title of the post (String)
-- `slug`: Slug for the post URL (String, optional)
+- `slug`: Slug for the post URL (String, optional, but required for new posts due to Slug Plugin behavior)
 - `description`: Short description of the post (String, optional)
 - `image`: Featured image for the post (Image, optional)
 - `author`: Author of the post (String, optional)
 - `date`: Date of the post (Datetime, optional)
 - `body`: Main content of the post (Markdown)
+
+### Communities
+
+The `communities` collection manages community data, displayed on [pauseai.info/communities](https://pauseai.info/communities). It includes two files:
+
+- **PauseAI communities** (`src/routes/communities/pauseai-communities.json`)
+    - `communities`: A list of communities, each with:
+        - `name`: Name of the community (String)
+        - `lat`: Latitude (Number)
+        - `lon`: Longitude (Number)
+        - `link`: Link to the community (String)
+
+- **Adjacent communities** (`src/routes/communities/adjacent-communities.json`)
+    - `communities`: A list of communities, each with:
+        - `name`: Name of the community (String)
+        - `lat`: Latitude (Number)
+        - `lon`: Longitude (Number)
+        - `link`: Link to the community (String)
 
 ## Backend
 
