@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from "vitest"; // Assuming Vitest or similar test runner
-import { dictToEntryObjects, entryObjectsToDict, registerPlugin } from ".";
+import { describe, it, expect } from "vitest";
+import { dictToEntryObjects, entryObjectsToDict } from ".";
 
 describe("dictToEntryObjects", () => {
   it("should convert a simple dictionary to an array of EntryObjects", () => {
