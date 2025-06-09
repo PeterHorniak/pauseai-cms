@@ -16,6 +16,9 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
 - **Slug Plugin**:
     - Hides the slug field when editing existing entries as slugs cannot be changed after creation.
     - Hides the "optional" label for the slug field in new entries, as it is actually required but only for new posts.
+- **JSON Dictionary Plugin**:
+    - Enables Decap CMS to handle dictionaries by converting them to and from arrays of objects.
+    - Registers a custom format named "json_dict" for ".json" files.
 - **Dark Mode**: Implements dark mode support using [Darkreader](https://darkreader.org/).
 
 ## Collections
