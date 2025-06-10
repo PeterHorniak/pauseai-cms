@@ -33,7 +33,7 @@ export function registerPlugin(cms: typeof CMS) {
     toFile: (data) => {
       const entryObjects = (data as any).entries;
       const dict = entryObjectsToDict(entryObjects);
-      return JSON.stringify(dict);
+      return JSON.stringify(dict, null, "\t");
     },
   });
   console.log("registered");

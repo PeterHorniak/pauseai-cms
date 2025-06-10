@@ -12,6 +12,7 @@ export async function registerPlugin(
     handler: async ({ entry }) => {
       const data = entry.get("data");
       const body = data.get("body");
+      if (!body) return;
       const formatted = await format(body, {
         plugins: [markdownPlugin],
         parser: "markdown",
