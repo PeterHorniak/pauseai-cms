@@ -12,14 +12,14 @@ hideOptionalLabelStyle.replaceSync(hideOptionalLabelCss);
 export function registerPlugin() {
   document.adoptedStyleSheets.push(styleDisabledInputStyle);
   document.adoptedStyleSheets.push(hideOptionalLabelStyle);
-  observeSlugFieldForDisabling();
+  observeSlugFieldForCustomBehavior();
 }
 
-function observeSlugFieldForDisabling() {
+function observeSlugFieldForCustomBehavior() {
   const observer = new MutationObserver((mutationsList: MutationRecord[]) => {
     for (const mutation of mutationsList) {
       if (mutation.type === "childList") {
-        disableSlugFieldIfEditing();
+        handleSlugFieldBehavior();
         return;
       }
     }
@@ -27,7 +27,7 @@ function observeSlugFieldForDisabling() {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
-function disableSlugFieldIfEditing() {
+function handleSlugFieldBehavior() {
   const slugFieldInput = document.querySelector(
     'input[id^="slug-field"]'
   ) as HTMLInputElement | null;
@@ -45,8 +45,7 @@ function disableSlugFieldIfEditing() {
     const lastPseudoPathPart = pseudoPathParts[pseudoPathParts.length - 1];
 
     if (slugFieldInput.value === "") {
-      slugFieldInput.placeholder =
-        lastPseudoPathPart + " (automatically inferred)";
+      slugFieldInput.placeholder = `${lastPseudoPathPart} (automatically inferred)`;
     }
   }
 }
