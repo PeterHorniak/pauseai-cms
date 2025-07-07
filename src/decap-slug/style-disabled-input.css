@@ -1,0 +1,4 @@
+input[id^="slug-field"][readonly] {
+  opacity: 66%;
+  pointer-events: none;
+}

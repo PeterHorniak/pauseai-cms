@@ -1,23 +1,42 @@
-import hideSlugFieldCss from "./hide-slug-field.css?inline";
+import styleDisabledInputCss from "./style-disabled-input.css?inline";
 import hideOptionalLabelCss from "./hide-optional-label.css?inline";
 
 const NEW_POST_PATH_REGEX = /(?<!\/entries)\/new$/;
 
-const hideFieldStyle = new CSSStyleSheet();
-hideFieldStyle.replaceSync(hideSlugFieldCss);
+const styleDisabledInputStyle = new CSSStyleSheet();
+styleDisabledInputStyle.replaceSync(styleDisabledInputCss);
 
-const hideLabelStyle = new CSSStyleSheet();
-hideLabelStyle.replaceSync(hideOptionalLabelCss);
+const hideOptionalLabelStyle = new CSSStyleSheet();
+hideOptionalLabelStyle.replaceSync(hideOptionalLabelCss);
 
 export function registerPlugin() {
-  document.adoptedStyleSheets.push(hideFieldStyle);
-  document.adoptedStyleSheets.push(hideLabelStyle);
-  hideSlugFieldForEditing();
-  addEventListener("popstate", () => {
-    hideSlugFieldForEditing();
-  });
+  document.adoptedStyleSheets.push(styleDisabledInputStyle);
+  document.adoptedStyleSheets.push(hideOptionalLabelStyle);
+  observeSlugFieldForDisabling();
 }
 
-function hideSlugFieldForEditing() {
-  hideFieldStyle.disabled = NEW_POST_PATH_REGEX.test(location.hash);
+function observeSlugFieldForDisabling() {
+  const observer = new MutationObserver((mutationsList: MutationRecord[]) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === "childList") {
+        disableSlugFieldIfEditing();
+        return;
+      }
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+}
+
+function disableSlugFieldIfEditing() {
+  const slugFieldInput = document.querySelector('input[id^="slug-field"]');
+  if (!slugFieldInput) return;
+  const location = window.location;
+  const isNewEntry = NEW_POST_PATH_REGEX.test(location.hash);
+  if (isNewEntry) {
+    slugFieldInput.removeAttribute("readonly");
+    slugFieldInput.removeAttribute("tabindex");
+  } else {
+    slugFieldInput.setAttribute("readonly", "true");
+    slugFieldInput.setAttribute("tabindex", "-1");
+  }
 }
