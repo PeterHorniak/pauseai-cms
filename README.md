@@ -63,6 +63,20 @@ The `messages` collection manages localized message strings. It uses the `json_d
         - `key`: The unique identifier for the message (String)
         - `value`: The message string (String)
 
+### Quotes
+
+The `quotes` collection manages quotes data, displayed on [pauseai.info/quotes](https://pauseai.info/quotes). It includes one file:
+
+- **PauseAI Quotes** (`src/routes/quotes/data.json`)
+    - `quotes`: A list of quotes, each with:
+        - `background`: Background color/image for the quote (String)
+        - `color`: Text color for the quote (String, optional)
+        - `text`: The quote text (String)
+        - `author`: The author of the quote (String)
+        - `author_description`: Description of the author (String)
+        - `padding`: Padding for the quote (String, optional)
+        - `notice`: Any notice related to the quote (String, optional)
+
 ## Backend
 
 - **Backend**: GitHub
