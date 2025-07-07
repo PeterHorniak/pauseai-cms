@@ -14,8 +14,9 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
     - Integrates [Prettier](https://prettier.io/) for code formatting within the CMS editor.
     - Automatically formats markdown content in the body field before saving entries, ensuring consistent content formatting.
 - **Slug Plugin**:
-    - Hides the slug field when editing existing entries as slugs cannot be changed after creation.
-    - Hides the "optional" label for the slug field in new entries, as it is actually required but only for new posts.
+    - Disables the slug field when editing existing entries as slugs cannot be changed after creation.
+    - Infers the slug if it isn't specified in the metadata.
+    - Hides the "optional" label for the slug field, as it is actually required but only for new posts.
 - **JSON Dictionary Plugin**:
     - Enables Decap CMS to handle dictionaries by converting them to and from arrays of objects.
     - Registers a custom format named "json_dict" for ".json" files.
