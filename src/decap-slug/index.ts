@@ -28,7 +28,9 @@ function observeSlugFieldForDisabling() {
 }
 
 function disableSlugFieldIfEditing() {
-  const slugFieldInput = document.querySelector('input[id^="slug-field"]');
+  const slugFieldInput = document.querySelector(
+    'input[id^="slug-field"]'
+  ) as HTMLInputElement | null;
   if (!slugFieldInput) return;
   const location = window.location;
   const isNewEntry = NEW_POST_PATH_REGEX.test(location.hash);
@@ -38,5 +40,13 @@ function disableSlugFieldIfEditing() {
   } else {
     slugFieldInput.setAttribute("readonly", "true");
     slugFieldInput.setAttribute("tabindex", "-1");
+
+    const pseudoPathParts = location.hash.split("/");
+    const lastPseudoPathPart = pseudoPathParts[pseudoPathParts.length - 1];
+
+    if (slugFieldInput.value === "") {
+      slugFieldInput.placeholder =
+        lastPseudoPathPart + " (automatically inferred)";
+    }
   }
 }
