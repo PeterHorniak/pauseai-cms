@@ -35,10 +35,10 @@ function handleSlugFieldBehavior() {
   const location = window.location;
   const isNewEntry = NEW_POST_PATH_REGEX.test(location.hash);
   if (isNewEntry) {
-    slugFieldInput.removeAttribute("readonly");
+    slugFieldInput.removeAttribute("disabled");
     slugFieldInput.removeAttribute("tabindex");
   } else {
-    slugFieldInput.setAttribute("readonly", "true");
+    slugFieldInput.setAttribute("disabled", "true");
     slugFieldInput.setAttribute("tabindex", "-1");
 
     const pseudoPathParts = location.hash.split("/");
