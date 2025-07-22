@@ -1,20 +1,18 @@
 import styles from "./logo.css?inline";
 
-export function registerPlugin(config: {
+type Config = {
   width: string;
-  supportDarkMode: true;
-  darkSelector: string;
-}): void;
-export function registerPlugin(config: {
-  width: string;
-  supportDarkMode: false;
-}): void;
-export function registerPlugin(config: { width: string }): void;
-export function registerPlugin(config: {
-  width: string;
-  supportDarkMode?: boolean;
-  darkSelector?: string;
-}) {
+} & (
+  | {
+      supportDarkMode: true;
+      darkSelector: string;
+    }
+  | {
+      supportDarkMode: false | undefined;
+    }
+);
+
+export function registerPlugin(config: Config) {
   const observer = new MutationObserver(() => {
     const nav = document.querySelector("nav");
     if (!nav) return;
