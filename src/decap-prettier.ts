@@ -18,7 +18,7 @@ export async function registerPlugin(
         parser: "markdown",
         ...prettierConfig,
       });
-      return data.set("body", formatted);
+      return data.set("body", "\n" + formatted); // emulate Prettier behavior for entire files including Frontmatter
     },
   });
 }
