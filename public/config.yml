@@ -56,8 +56,13 @@ collections:
             widget: list
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Latitude, name: lat, widget: number }
-              - { label: Longitutde, name: lon, widget: number }
+              - { label: Latitude, name: lat, widget: number, step: 0.0000001 }
+              - {
+                  label: Longitutde,
+                  name: lon,
+                  widget: number,
+                  step: 0.0000001,
+                }
               - {
                   label: Link,
                   name: link,
@@ -73,8 +78,13 @@ collections:
             widget: list
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Latitude, name: lat, widget: number }
-              - { label: Longitutde, name: lon, widget: number }
+              - { label: Latitude, name: lat, widget: number, step: 0.0000001 }
+              - {
+                  label: Longitutde,
+                  name: lon,
+                  widget: number,
+                  step: 0.0000001,
+                }
               - { label: Link, name: link, widget: string }
   - name: "messages"
     label: "Messages"
@@ -103,9 +113,28 @@ collections:
             widget: list
             fields:
               - { name: "background", label: "Background", widget: "string" }
-              - { name: "color", label: "Color", widget: "string", required: false }
+              - {
+                  name: "color",
+                  label: "Color",
+                  widget: "string",
+                  required: false,
+                }
               - { name: "text", label: "Text", widget: "string" }
               - { name: "author", label: "Author", widget: "string" }
-              - { name: "author_description", label: "Author Description", widget: "string" }
-              - { name: "padding", label: "Padding", widget: "string", required: false }
-              - { name: "notice", label: "Notice", widget: "string", required: false }
+              - {
+                  name: "author_description",
+                  label: "Author Description",
+                  widget: "string",
+                }
+              - {
+                  name: "padding",
+                  label: "Padding",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  name: "notice",
+                  label: "Notice",
+                  widget: "string",
+                  required: false,
+                }
