@@ -56,12 +56,19 @@ collections:
             widget: list
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Latitude, name: lat, widget: number, step: 0.0000001 }
+              - {
+                  label: Latitude,
+                  name: lat,
+                  widget: number,
+                  value_type: float,
+                  step: 0.0001,
+                }
               - {
                   label: Longitutde,
                   name: lon,
                   widget: number,
-                  step: 0.0000001,
+                  value_type: float,
+                  step: 0.0001,
                 }
               - {
                   label: Link,
@@ -78,12 +85,19 @@ collections:
             widget: list
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Latitude, name: lat, widget: number, step: 0.0000001 }
+              - {
+                  label: Latitude,
+                  name: lat,
+                  widget: number,
+                  value_type: float,
+                  step: 0.0001,
+                }
               - {
                   label: Longitutde,
                   name: lon,
                   widget: number,
-                  step: 0.0000001,
+                  value_type: float,
+                  step: 0.0001,
                 }
               - { label: Link, name: link, widget: string }
   - name: "messages"
