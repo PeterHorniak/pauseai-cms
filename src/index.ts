@@ -19,6 +19,10 @@ registerDecapLogo({
   darkSelector: "html[data-darkreader-scheme]",
 });
 registerDecapJsonDict(CMS);
+CMS.registerCustomFormat("json", "json_tabs", {
+  fromFile: (file) => JSON.parse(file),
+  toFile: (data) => JSON.stringify(data, null, "\t"),
+})
 CMS.init();
 DarkReader.auto(
   {

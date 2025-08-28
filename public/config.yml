@@ -46,6 +46,7 @@ collections:
   - label: "Communities"
     description: "Shown on pauseai.info/communities"
     name: "communities"
+    format: "json_tabs"
     files:
       - label: "PauseAI communities"
         name: "pauseai"
@@ -117,6 +118,7 @@ collections:
   - label: "Quotes"
     description: "Shown on pauseai.info/quotes"
     name: "quotes"
+    format: "json_tabs"
     files:
       - label: "PauseAI Quotes"
         name: "pauseai"

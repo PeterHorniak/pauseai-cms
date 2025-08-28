@@ -20,6 +20,9 @@ This project is a Decap CMS configuration, enhanced with several plugins, for th
 - **JSON Dictionary Plugin**:
     - Enables Decap CMS to handle dictionaries by converting them to and from arrays of objects.
     - Registers a custom format named `json_dict` for `.json` files.
+- **JSON Tabs Plugin**:
+    - Registers a custom format named `json_tabs` for `.json` files.
+    - This format ensures that JSON files are saved with tab indentation.
 - **Dark Mode**: Implements dark mode support using [Darkreader](https://darkreader.org/).
 
 ## Collections
@@ -38,7 +41,7 @@ The CMS is configured for managing "posts" with the following fields:
 
 ### Communities
 
-The `communities` collection manages community data, displayed on [pauseai.info/communities](https://pauseai.info/communities). It includes two files:
+The `communities` collection manages community data, displayed on [pauseai.info/communities](https://pauseai.info/communities). It uses the `json_tabs` format and includes two files:
 
 - **PauseAI communities** (`src/routes/communities/pauseai-communities.json`)
     - `communities`: A list of communities, each with:
@@ -65,7 +68,7 @@ The `messages` collection manages localized message strings. It uses the `json_d
 
 ### Quotes
 
-The `quotes` collection manages quotes data, displayed on [pauseai.info/quotes](https://pauseai.info/quotes). It includes one file:
+The `quotes` collection manages quotes data, displayed on [pauseai.info/quotes](https://pauseai.info/quotes). It uses the `json_tabs` format and includes one file:
 
 - **PauseAI Quotes** (`src/routes/quotes/data.json`)
     - `quotes`: A list of quotes, each with:
